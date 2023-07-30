@@ -1,0 +1,52 @@
+.links h4{
+    color:black;
+}
+div[class= "bgshape tablet secondred"] svg{
+    fill:white;
+    transition:fill .7s ease-in-out;
+}
+div[class= 'bgshape tablet thirdred secondred'] svg{
+    fill:black;
+    transition:fill .7s ease-in-out;
+}
+div[class = "bgshape tablet"] svg{
+    fill:blue;
+    transition:.7s ease-in-out;
+}
+div.sectionco{
+    position:absolute;
+    width:100%;
+    height:300px;
+}
+.bgshape{
+    z-index:-1;
+}
+div[class="bgshape tablet secondred"]{
+    z-index:1;
+    position:absolute;
+}
+#jumpUpButton{
+    background-size:contain;
+    background-position:center;
+    width:50px;
+    height:50px;
+    position:absolute;
+    display:inline-block;
+    top:90%;
+    left:90%;
+    z-index:1;
+    cursor:auto;
+}
+#upIcon{
+    fill:transparent;
+}
+div[class="svg-container containerph"] img{
+    width:300px;
+    transform-origin:center;
+    transform:scale(1.2);
+    top:50px;
+    left:-100px;
+    position:absolute;
+}
+
+

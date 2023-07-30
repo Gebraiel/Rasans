@@ -1,0 +1,53 @@
+.section-info h2 {
+    letter-spacing: -3px;
+}
+
+.section-info p {
+    font-size: 15px;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.8;
+    color: yellow;
+}
+
+.port-btn a {
+    background-color: transparent;
+    padding: 15px 18px;
+    margin-top: 10px;
+    display: inline-block;
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid yellow;
+}
+
+.port-btnE a {
+    color: yellow;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-top: 76px;
+    font-size: 18px;
+    border-bottom: 2px solid;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.section-image img:first-child {
+    width: 104%;
+    left: -56px;
+    top: -46px;
+}
+
+@media (min-width: 768px) and (max-width:1200px) {
+    .tablet.thirdred {
+        transform: scale(2);
+        left: 0;
+    }
+
+    .section-image img:first-child {
+        left: 11px;
+        top: 57px;
+    }
+}

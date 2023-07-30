@@ -1,0 +1,45 @@
+.flexCol:nth-child(1) .flexEle:nth-child(1) a:nth-child(1){
+    background-image:url("../folio-images/activeTime.jpg");
+}
+.flexCol:nth-child(1) .flexEle:nth-child(1) a:nth-child(2){
+    background-image:url("../folio-images/alahram.png");
+}
+.flexCol:nth-child(1) .flexEle:nth-child(2) a:nth-child(1){
+    background-image:url("../folio-images/cleanTech.png");
+}
+.flexCol:nth-child(1) .flexEle:nth-child(2) a:nth-child(2){
+    background-image:url("../folio-images/COMBO.png");
+}
+
+
+
+.flexCol:nth-child(2) .flexEle:nth-child(1) a:nth-child(1){
+    background-image:url("../folio-images/inLight.png");
+}
+.flexCol:nth-child(2) .flexEle:nth-child(1) a:nth-child(2){
+    background-image:url("../folio-images/jevac.png");
+}
+.flexCol:nth-child(2) .flexEle:nth-child(2) a:nth-child(1){
+    background-image:url("../folio-images/kofta.png");
+}
+.flexCol:nth-child(2) .flexEle:nth-child(2) a:nth-child(2){
+    background-image:url("../folio-images/maryWax.png");
+}
+
+
+.flexCol:nth-child(3) .flexEle:nth-child(1) a:nth-child(1){
+    background-image:url("../folio-images/METITHERM-1.png");
+}
+.flexCol:nth-child(3) .flexEle:nth-child(1) a:nth-child(2){
+    background-image:url("../folio-images/shorbagy.png");
+}
+.flexCol:nth-child(3) .flexEle:nth-child(2) a:nth-child(1){
+    background-image:url("../folio-images/VILLA.png");
+}
+.flexCol:nth-child(3) .flexEle:nth-child(2) a:nth-child(2){
+    background-image:url("../folio-images/WS.png");
+}
+
+/*selection is done as a 3d matrix*/
+/*col , element, link*/
+/*should match to the links within the html*/

@@ -1,0 +1,49 @@
+section[data-index="4"] .container{
+    position:relative;
+    top:50%;
+}
+.about-usFlex{
+    display:flex;
+    position: relative;
+    width:100%;
+    top:90%;
+    text-transform:uppercase;
+    color:black;
+    font-size:1.1vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+.about-usFlex a{
+    text-align: center;
+    margin:0% 1%;
+    color:rgba(0,0,0,1);
+    flex:0 0 4%;
+    flex-grow:1;
+    font-weight: bold;
+    transition:color .5s ease-in-out;
+}
+.about-usFlex a:nth-child(1){ /*advertising and marketing is a big one*/
+    flex-grow:2;
+}
+.about-usFlex a:hover{
+    color:grey;
+}
+.welove h2{
+    color:white;
+}
+/*this next bit can be disabled for a lame no changing effect*/
+@media (max-width:600px){
+    .about-usFlex a{
+        flex:0 0 100%;
+        margin:3% 0;
+        font-size:2vh;
+        max-width:100%;
+    }
+    .about-usFlex {
+        top:45%;
+    }
+    section[data-index="4"] .container{
+        top:30%;
+    }
+}

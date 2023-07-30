@@ -1,0 +1,14 @@
+section[data-index="3"] >.about-us .button{
+    color: white;
+    transition:color .5s ease-in-out;
+}
+section[data-index="3"] >.about-us .button::after{
+    background:transparent;
+}
+section[data-index="3"] .we h1,section[data-index="3"] .we h2{
+    color:rgb(255,255,255,1);
+    /*text-shadow:0 0 10px yellow;*/
+}
+section[data-index="3"] >.about-us .button:hover{
+    color: #555;
+}
