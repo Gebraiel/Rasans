@@ -30,7 +30,7 @@ let setConstantTextPosition = () =>{
         onSiteItemArray[i].style.top = i * 100 + "px" ; 
     }
     onSiteItemArray[1].style.animation ="glowing .7s alternate infinite ease-in-out";
-    onSiteItemArray[1].style.fontSize ="3.5em";
+    onSiteItemArray[1].style.fontSize ="4.5em";
 
 }
 var controlVar ;

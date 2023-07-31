@@ -1,18 +1,25 @@
 div.itemContainer{
-    position:absolute;
-    z-index:1;
-    top:20%;
-    left:2%;
-    opacity:0;
-    width:400px;
-    height:300px;
-    transform:rotate(-10deg) skewX(-20deg);
-    overflow:hidden;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 5%;
+    opacity: 0;
+    width: 500px;
+    height: 300px;
+    transform: rotate(-10deg) skewX(-20deg);
+    overflow: hidden;
+}
+@media(min-width:2000px){
+    div.itemContainer{
+        top:35%;
+        left: 5%;
+        width:900px;
+    }
 }
 div.itemContainer a{
     font-family: Helvetica, sans-serif,Arial;
     box-sizing: border-box;
-    font-size:1.7em;
+    font-size:2.7em;
     font-weight: 500;
     line-height:30px;
     padding:35px;

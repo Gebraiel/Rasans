@@ -651,7 +651,7 @@ p.slogan strong{
   width: 80%;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 55%;
   transform: translate(-50%, -50%);
 }
 .section-info{
@@ -869,9 +869,9 @@ p.slogan strong{
   top: 0;
   left: 0;
   z-index: 0;
-  width: 1.2vw;
-  height: 1.2vw;
-  background-size: 1.2vw 1.2vw; 
+  width: 0.5vw;
+  height: 0.5vw;
+  background-size: 0.5vw 0.5vw; 
   background-image:url(../images/dot.svg);
   filter: drop-shadow(0px 0px 4px rgb(255, 208, 1));
   animation-name: glowingStars;
@@ -3431,7 +3431,7 @@ a.active:after {
   .slider-info p{font-size: .7vw;}
   .google-image{width: 25%}
   .info{margin: 8% 0;}
-  .secondred{top: -8%;left: 56%;}
+  /* .secondred{top: 6%;left: 56%;} */
 }
 @media all and (max-width: 1440px){
   .nav nav > ul > li{}
@@ -3817,7 +3817,10 @@ a.active:after {
 .logo .logo-link:hover,
 .logo .logo-link:active,
 .logo .logo-link:focus {border-bottom: none!important;}
-.logo img {height: 18px;}
+ .logo img {
+  /* height: 18px; */
+  width:100%;
+} 
 .row > .buy {text-align: right;}
 
 .filter-button-group {

@@ -371,7 +371,7 @@ $(document).ready(function () {
 
 				}
 
-				// From 1 to 2 // From 3 to 2 opacity: 1; top: 265%; left: 90%; width: 79%; transform: matrix(0.9848, 0.17364, -0.17364, 0.9848, -157.5, -207);
+				// From 1 to 2 // From 3 to 2 opacity: 1; top: 265%; left: 90%; width: 79%; transform: matrix(0.9845, 0.17364, -0.17364, 0.9848, -157.5, -207);
 				// From 2 to 3
 				if (index == '2') {
 
