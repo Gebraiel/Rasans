@@ -1,3 +1,6 @@
+:root{
+    --fontSize:2.7em
+}
 div.itemContainer{
     position: absolute;
     z-index: 1;
@@ -9,13 +12,7 @@ div.itemContainer{
     transform: rotate(-10deg) skewX(-20deg);
     overflow: hidden;
 }
-@media(min-width:2000px){
-    div.itemContainer{
-        top:35%;
-        left: 5%;
-        width:900px;
-    }
-}
+
 div.itemContainer a{
     font-family: Helvetica, sans-serif,Arial;
     box-sizing: border-box;
@@ -34,6 +31,16 @@ div.itemContainer a{
     transition-duration: .7s;
     transition-timing-function: ease-in-out;
     opacity:.2;
+}
+@media(min-width:2000px){
+    div.itemContainer{
+        top: 35%;
+        left: 33px;
+        width: 90%;
+    }
+    :root {
+        --fontSize: 8.7em; /* New value for --primary-color inside the media query */
+    }
 }
 @keyframes glowing{
     0%{transform:scale(1) skewX(20deg); opacity:1;}

@@ -289,7 +289,11 @@ a {text-decoration: none;outline: none;cursor: pointer;}
 .topbar{padding: 2% 2% !important;}
 .navbar .med{}
 .menu-section{display: none;}
-.logoo{}
+@media (min-width:2000px) {
+  .logoo{
+    padding-top: 17px;
+  } 
+}
 .logo{position: relative;width: 8%;left: 0;top: 0;z-index: 999}
 .logo1{display: none}
 .ct .hamburger{display: none}

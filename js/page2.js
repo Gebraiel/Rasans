@@ -30,7 +30,22 @@ let setConstantTextPosition = () =>{
         onSiteItemArray[i].style.top = i * 100 + "px" ; 
     }
     onSiteItemArray[1].style.animation ="glowing .7s alternate infinite ease-in-out";
-    onSiteItemArray[1].style.fontSize ="4.5em";
+
+    const rootElement = document.documentElement;
+    computedStyle = window.getComputedStyle(rootElement);
+
+    // Step 3: Access the font size property in pixels
+    currentFontSizeInPixels = parseFloat(computedStyle.getPropertyValue('--fontSize'));
+
+    // Assuming the base font size is 16px (you should adjust this according to your actual base font size)
+    const baseFontSizeInPixels = 16;
+
+    // Convert to em units using the formula
+    currentFontSizeInEm = currentFontSizeInPixels 
+
+    newFontSize = currentFontSizeInEm ;
+    console.log(newFontSize)
+    onSiteItemArray[1].style.fontSize =newFontSize+"em";
 
 }
 var controlVar ;
@@ -59,7 +74,7 @@ let controlFunction = ()=> {
         onSiteItemArray[3].style.opacity = ".2";
         
         onSiteItemArray[2].style.animation ="glowing .7s alternate infinite ease-in-out";
-        onSiteItemArray[2].style.fontSize ="3.5em";
+        onSiteItemArray[2].style.fontSize =newFontSize+"em";
 
         onSiteItemArray[1].style.fontSize ="1.7em";
         onSiteItemArray[3].style.fontSize ="1.7em";
