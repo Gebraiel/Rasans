@@ -184,7 +184,7 @@ $(document).ready(function () {
 					nav.staggerTo(".hamburger ", .6, {
 							opacity: "1",
 							ease: Sine.easeIn
-						}, ".03")
+						}, ".003")
 						.staggerTo("#stroke ", .6, {
 							display: "none",
 							ease: Sine.easeIn
@@ -193,7 +193,7 @@ $(document).ready(function () {
 							opacity: 1,
 							scale: 1,
 							ease: Sine.easeIn
-						}, ".03")
+						}, ".003")
 
 
 					var bgshape = new TimelineMax();
