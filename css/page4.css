@@ -30,7 +30,7 @@ section[data-index="4"] .container{
     color:grey;
 }
 .welove h2{
-    color:#ff0000;
+    color:white;
 }
 /*this next bit can be disabled for a lame no changing effect*/
 @media (max-width:600px){

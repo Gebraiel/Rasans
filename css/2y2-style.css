@@ -666,7 +666,8 @@ p.slogan strong{
 }
 @media(min-width:2000px){
   .sectionco{
-    left: 65%;
+    left: 60%;
+    top:40%;
   }
 }
 .section-info{

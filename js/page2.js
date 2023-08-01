@@ -9,7 +9,7 @@ let getActiveSection = ()=>{
     }
 }
 var onSiteImgArray,onSiteImgCol,onSiteItemArray,onSiteItemCol;
-const ImgSize = 1100; // (width + border_left_right border), width/borders are set in css
+const ImgSize = 1250; // (width + border_left_right border), width/borders are set in css
 let setInitialImgPosition = () =>{
     onSiteImgCol = document.getElementsByClassName("imgContainer");
     onSiteImgArray = Array.from(onSiteImgCol);
@@ -41,7 +41,9 @@ let setConstantTextPosition = () =>{
 
     BigFontSize = BigFontSizeProperty ;
     SmallFontSize = SmallFontSizeProperty;
+    FontWeight = computedStyle.getPropertyValue('--FontWeight')
     onSiteItemArray[1].style.fontSize =BigFontSize+"em";
+    onSiteItemArray[1].style.fontWeight = FontWeight;
 
 }
 var controlVar ;
@@ -72,6 +74,7 @@ let controlFunction = ()=> {
         
         onSiteItemArray[2].style.animation ="glowing .7s alternate infinite ease-in-out";
         onSiteItemArray[2].style.fontSize =BigFontSize+"em";
+        onSiteItemArray[2].style.fontWeight =FontWeight;
 
         onSiteItemArray[1].style.fontSize =SmallFontSize+"em";
         onSiteItemArray[3].style.fontSize =SmallFontSize+"em";
