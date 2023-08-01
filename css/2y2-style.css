@@ -658,6 +658,12 @@ p.slogan strong{
   left: 55%;
   transform: translate(-50%, -50%);
 }
+@media(max-width:450px){
+  .sectionco{
+    top:25%;
+    left:37%;
+  }
+}
 @media(min-width:2000px){
   .sectionco{
     left: 65%;
@@ -3519,7 +3525,10 @@ a.active:after {
   .portfolioo nav ul li a:hover{background-color: none !important;color: none !important;}
 }
 @media all and (max-width: 425px){
-  .secondred{top: -23%;left: -80%;width: 280%;}
+  .secondred{   
+    top: 40%;
+    left: -110%;
+    width: 280%;}
   .mouse {width: 3%;height: 2.46%;}
   .about-us{    top: 75%;}
   .about-us a{display: block;width: 100%;font-size: 3vw;margin: 7% 0;}
