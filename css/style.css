@@ -34,7 +34,9 @@ a {text-decoration: none;outline: none;cursor: pointer;}
 /* End Global rules */
 /* Start Loader */
 
-
+img{
+  width:100%;
+}
 .svg-wrapper {
   height: 150px;
   width: 150px;

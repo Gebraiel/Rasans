@@ -289,6 +289,9 @@ a {text-decoration: none;outline: none;cursor: pointer;}
 .topbar{padding: 2% 2% !important;}
 .navbar .med{}
 .menu-section{display: none;}
+.logoo img{
+  width:100%;
+}
 @media (min-width:2000px) {
   .logoo{
     padding-top: 17px;
@@ -3536,7 +3539,7 @@ a.active:after {
   .section-info h2 {font-size: 6.68vw;}
   .section-info h1 {font-size: 11.06vw;}
   .section-info p {font-size: 2.779vw;}
-  .ywsecond{width: 300%;left: -201%;}
+  .ywsecond{width: 300%;left: -225%;}
   /*.about-us a[data-index="3"]{display: block;}*/
   .about-us a{margin: 4% 0;}
   .links, .main .page-el[data-index="4"] .about-us a{font-size: 2.8vw;display: inline;}

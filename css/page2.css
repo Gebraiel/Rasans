@@ -21,7 +21,7 @@ div.itemContainer a{
     font-size:var(--SmallFontSize,2.7em);
     font-weight: 800;
     line-height:30px;
-    padding:35px;
+    padding:25px;
     position:absolute;
     left:0;
     right:0;

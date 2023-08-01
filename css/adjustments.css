@@ -33,7 +33,7 @@ div[class="bgshape tablet secondred"]{
     position:absolute;
     display:inline-block;
     top:90%;
-    left:90%;
+    left:85%;
     z-index:1;
     cursor:auto;
 }
