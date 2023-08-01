@@ -9,13 +9,14 @@ let getActiveSection = ()=>{
     }
 }
 var onSiteImgArray,onSiteImgCol,onSiteItemArray,onSiteItemCol;
-const ImgSize = 800; // (width + border_left_right border), width/borders are set in css
+const ImgSize = 1100; // (width + border_left_right border), width/borders are set in css
 let setInitialImgPosition = () =>{
     onSiteImgCol = document.getElementsByClassName("imgContainer");
     onSiteImgArray = Array.from(onSiteImgCol);
     for (i = 0 ; i < onSiteImgArray.length; i++){
         onSiteImgArray[i].style.left = -i*ImgSize  + "px";
-        onSiteItemArray[i].style.left = "0px";
+
+        // onSiteItemArray[i].style.left = "0px";
     }
 } ; 
 let setConstantTextPosition = () =>{
@@ -35,17 +36,12 @@ let setConstantTextPosition = () =>{
     computedStyle = window.getComputedStyle(rootElement);
 
     // Step 3: Access the font size property in pixels
-    currentFontSizeInPixels = parseFloat(computedStyle.getPropertyValue('--fontSize'));
+    BigFontSizeProperty = parseFloat(computedStyle.getPropertyValue('--BigFontSize'));
+    SmallFontSizeProperty = parseFloat(computedStyle.getPropertyValue('--SmallFontSize'));
 
-    // Assuming the base font size is 16px (you should adjust this according to your actual base font size)
-    const baseFontSizeInPixels = 16;
-
-    // Convert to em units using the formula
-    currentFontSizeInEm = currentFontSizeInPixels 
-
-    newFontSize = currentFontSizeInEm ;
-    console.log(newFontSize)
-    onSiteItemArray[1].style.fontSize =newFontSize+"em";
+    BigFontSize = BigFontSizeProperty ;
+    SmallFontSize = SmallFontSizeProperty;
+    onSiteItemArray[1].style.fontSize =BigFontSize+"em";
 
 }
 var controlVar ;
@@ -57,6 +53,7 @@ let controlFunction = ()=> {
         for (i = 0; i < onSiteImgArray.length ; i++){
             let orgPosLeft = parseInt(onSiteImgArray[i].style.left);
             orgPosLeft += ImgSize;  
+            
             onSiteImgArray[i].style.left = orgPosLeft + "px";    
         }
         onSiteImgArray[1].style.opacity = "1" ;
@@ -74,10 +71,10 @@ let controlFunction = ()=> {
         onSiteItemArray[3].style.opacity = ".2";
         
         onSiteItemArray[2].style.animation ="glowing .7s alternate infinite ease-in-out";
-        onSiteItemArray[2].style.fontSize =newFontSize+"em";
+        onSiteItemArray[2].style.fontSize =BigFontSize+"em";
 
-        onSiteItemArray[1].style.fontSize ="1.7em";
-        onSiteItemArray[3].style.fontSize ="1.7em";
+        onSiteItemArray[1].style.fontSize =SmallFontSize+"em";
+        onSiteItemArray[3].style.fontSize =SmallFontSize+"em";
         onSiteItemArray[1].style.animation ="none";
 
         onSiteItemArray.push(onSiteItemArray[0]);

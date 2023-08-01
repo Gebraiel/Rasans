@@ -1046,7 +1046,6 @@ $(document).ready(function () {
 			this.settings = {};
 			this.settings.horizontal = (window.innerWidth / fractionOfSize).toFixed(0);
 			this.settings.vertical = (window.innerHeight / fractionOfSize).toFixed(0);
-
 			this.init();
 		}
 
@@ -1110,8 +1109,8 @@ $(document).ready(function () {
 		}
 
 		Dots.prototype.drawDot = function (dot, index) {
-			var x, y, random;
-
+			var x, y, random ,bottomRange,upRange,leftRange,rightRange,style;
+			
 			random = this.random(100);
 
 			if (index % this.settings.horizontal == 0) {
@@ -1122,9 +1121,70 @@ $(document).ready(function () {
 
 			/*x = this.column * (this.width / this.settings.horizontal) - this.width / this.settings.horizontal / 2;
 			y = this.row * (this.height / this.settings.vertical) - this.height / this.settings.vertical / 2;*/
-			x = this.random(this.width);
-			y = this.random(this.height);
+			function getRotationDegree(element){
+				const computedStyles = window.getComputedStyle(element);
+				var tr = computedStyles.getPropertyValue("transform")
+				console.log(tr);
+				var values = tr.split('(')[1],
+				values = values.split(')')[0],
+				values = values.split(',');
+
+				var a = values[0]; 
+				var b = values[1]; 
+				var c = values[2]; 
+				var d = values[3]; 
+				var angle = Math.round(Math.asin(b) * (180/Math.PI));
+				console.log("angle: "+ angle);
+				return angle;
+			}
+			function getPositionsAfterRotation(element) {
+				const computedStyles = window.getComputedStyle(element);
+				const originalWidth = parseFloat(computedStyles.width.replace('px', ''));
+				const originalHeight = parseFloat(computedStyles.height.replace('px', ''));
+	
+				// Parse and calculate the translation values
+				const transformValue = computedStyles.transform;
+				const translateValues = transformValue.match(/-?\d+(\.\d+)?/g);
+				const translateX = 0.5*originalWidth;
+				const translateY = 0.5*originalHeight;
+				console.log("translateX : "+translateX);
+				console.log("translateY : "+translateY);
+				// Calculate the rotated width and height
+				const radians = Math.abs(parseFloat(getRotationDegree(element) * (Math.PI / 180)));
+				const rotatedWidth = Math.abs(originalWidth * Math.cos(radians)) + Math.abs(originalHeight * Math.sin(radians));
+				const rotatedHeight = Math.abs(originalWidth * Math.sin(radians)) + Math.abs(originalHeight * Math.cos(radians));
+	
+				// Calculate the final positions considering translation
+				const leftAfterRotation = parseFloat(computedStyles.left.replace('px', '')) + (originalWidth - rotatedWidth) / 2 + Math.abs(translateX);
+				const topAfterRotation = parseFloat(computedStyles.top.replace('px', '')) + (originalHeight - rotatedHeight) / 2 - Math.abs(translateY) ;
+				const rightAfterRotation = leftAfterRotation + rotatedWidth;
+				const bottomAfterRotation = topAfterRotation + rotatedHeight;
+	
+				return { top: topAfterRotation, bottom: bottomAfterRotation, right: rightAfterRotation, left: leftAfterRotation };
+			}
+			logo = document.getElementsByClassName('yw')[0];
+			// console.log(logo);
+			style = window.getComputedStyle(logo);
+			const positionsAfterRotation = getPositionsAfterRotation(logo);
+			leftRange  = positionsAfterRotation.left;
+			rightRange = positionsAfterRotation.right;
+			upRange = positionsAfterRotation.top;
+			bottomRange = positionsAfterRotation.bottom;
+			console.log("Left: "+leftRange);
+			console.log("Right: "+rightRange);
+			console.log("Top: "+upRange);
+			console.log("Bottom: "+bottomRange);
+			do{
+				x = this.random(this.width);
+			}while(x >= leftRange && x<=rightRange);
+
+			do{
+				y = this.random(this.height);
+			}while(y >= bottomRange && y<=upRange)
+			// x = this.random(this.width);
+			// y = this.random(this.height);
 			this.column++;
+
 			rand = this.random(1000) + 1000 ; 
 			dot.style.webkitAnimationDuration = rand + 'ms';
 			dot.style.mozAnimationDuration= rand + 'ms';

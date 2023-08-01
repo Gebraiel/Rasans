@@ -1,5 +1,6 @@
 :root{
-    --fontSize:2.7em
+    --BigFontSize:5.7em;
+    --SmallFontSize:4em;
 }
 div.itemContainer{
     position: absolute;
@@ -16,7 +17,7 @@ div.itemContainer{
 div.itemContainer a{
     font-family: Helvetica, sans-serif,Arial;
     box-sizing: border-box;
-    font-size:2.7em;
+    font-size:var(--SmallFontSize,2.7em);
     font-weight: 500;
     line-height:30px;
     padding:35px;
@@ -39,7 +40,7 @@ div.itemContainer a{
         width: 90%;
     }
     :root {
-        --fontSize: 8.7em; /* New value for --primary-color inside the media query */
+        --BigFontSize: 8.7em; 
     }
 }
 @keyframes glowing{
@@ -52,6 +53,7 @@ div.itemContainer a{
 div.imgContainer img{
     display:inline-block;
     cursor:pointer;
+    width: 100%;
 }
 body::-webkit-scrollbar{
     display:none;
