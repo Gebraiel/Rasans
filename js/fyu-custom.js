@@ -129,11 +129,23 @@ $(document).ready(function () {
 						opacity: 0,
 						scale: 0
 					});
-					TweenLite.set(".logo", {
-						width: "50%",
-						left: "45%",
-						top: "50%"
-					});
+					var mediaQuery = window.matchMedia("(min-width:2000px)");
+					function applyResponsiveProperties() {
+						if (mediaQuery.matches) {
+							TweenLite.set(".logo", {
+								width: "50%",
+								left: "50%",
+								top: "50%"
+							});
+						} else {
+							TweenLite.set(".logo", {
+								width: "50%",
+								left: "45%",
+								top: "50%"
+							});
+						}
+					  }
+					applyResponsiveProperties()
 
 					var line = new TimelineMax({});
 					line.fromTo(".line", .6, {
@@ -163,7 +175,7 @@ $(document).ready(function () {
 					var move = new TimelineMax();
 					move.staggerTo(".logo", .6, {
 						left: "0",
-						width: "130px",
+						width: "200px",
 						top: "0",
 						ease: Sine.easeIn
 					});
