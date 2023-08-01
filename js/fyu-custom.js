@@ -131,7 +131,7 @@ $(document).ready(function () {
 					});
 					TweenLite.set(".logo", {
 						width: "50%",
-						left: "25%",
+						left: "45%",
 						top: "50%"
 					});
 
@@ -281,7 +281,7 @@ $(document).ready(function () {
 
 			var div = $('.logo');
 			div.each(function () {
-				$(this).css('top', ($(window).height() - div.height()) / 3.5)
+				$(this).css('top', ($(window).height() - div.height() + 350) / 3.5)
 			});
 		}
 		if ($("body").hasClass("ct")) {
