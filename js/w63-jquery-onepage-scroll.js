@@ -409,8 +409,40 @@
 
       responsive();
     }
-
-    if(settings.keyboard == true) {
+    if (settings.keyboard == true) {
+      // Remove the existing keydown event listener
+      // $(document).keydown(function(e) { ... });
+    
+      // Add a new event listener for mouse wheel scroll
+      el.on("mousewheel DOMMouseScroll", function(e) {
+        // Calculate the direction of the mouse wheel scroll
+        var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    
+        // Check if the body element has the class "disabled-onepage-scroll"
+        // and the keyDown flag is true
+        if (!$("body.xc").hasClass("disabled-onepage-scroll") && keyDown == true) {
+          keyDown = false;
+          setTimeout(function() {
+            keyDown = true;
+          }, 1000);
+    
+          // Handle the mouse wheel scroll direction
+          if (delta > 0) {
+            // Scrolling up
+            el.moveUp();
+          } else {
+            // Scrolling down
+            el.moveDown();
+          }
+    
+          // Prevent default scroll behavior
+          e.preventDefault();
+        }
+      });
+    }
+    
+    
+    /*if(settings.keyboard == true) {
       $(document).keydown(function(e) {
         var tag = e.target.tagName.toLowerCase();
 
@@ -446,7 +478,7 @@
         }
 
       });
-    }
+    }*/
     return false;
   }
 }(window.jQuery);
