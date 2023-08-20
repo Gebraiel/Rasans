@@ -333,7 +333,7 @@ $(document).ready(function () {
 	function addSlides(){
 		const logo = document.getElementById("logo");
 		
-		for(var i = 1;i<=8;i++)
+		for(var i = 1;i<=6;i++)
 		{
 			var useElement = document.createElementNS("http://www.w3.org/2000/svg", "use");
 			
