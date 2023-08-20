@@ -2,6 +2,7 @@
     --BigFontSize:6.7em;
     --SmallFontSize:4em;
     --FontWeight:600;
+   
 }
 div.itemContainer{
     position: absolute;
@@ -91,9 +92,38 @@ div.imgContainer{
         100%{transform:scale(1.02) ; opacity:.9;}
     }
 }
+.slide{
+    fill-opacity:0;
+}
+.prev{
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut{
+    0%{
+        fill-opacity:1;
+    }
+    100% {
+      fill-opacity: 0;
+    }
+  }
+  
+use.active {
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+  0%{
+      fill-opacity:0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
 .itemContainer a:hover{
     color:rgba(0,0,0,.8);
 }
+
 div.imgContainer img{
     display:inline-block;
     cursor:pointer;

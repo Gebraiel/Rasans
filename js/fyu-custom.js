@@ -329,7 +329,68 @@ $(document).ready(function () {
 
 	// When reload remove Hash from the url
 	window.location.replace("#");
-
+	let executed = false;
+	function addSlides(){
+		const logo = document.getElementById("logo");
+		
+		for(var i = 1;i<=8;i++)
+		{
+			var useElement = document.createElementNS("http://www.w3.org/2000/svg", "use");
+			
+			useElement.classList.add('slide');
+			if(i==1){
+				useElement.classList.add('active');
+			}
+			useElement.setAttribute('id', `slide${i}`);
+			useElement.setAttribute('href', '#shape');
+			useElement.setAttribute('fill', `url(#imageFill${i})`);
+			logo.appendChild(useElement);
+		}
+	}
+	function setActive(e,slides){
+		
+		// change stack order
+	}
+	function showImages(){
+		const logo = document.getElementById("logo");
+		const shape = document.getElementById("shape");
+		const toggleLinks = document.querySelectorAll(".image-link");
+		addSlides();
+		const slides = document.querySelectorAll('.slide')
+		console.log(slides.length);
+		toggleLinks.forEach((link) => {
+		link.addEventListener("click", (e)=> {
+			var prev = document.querySelector('use.active');
+			const slideID = e.currentTarget.getAttribute("data-fill");
+			const slide =  document.getElementById(slideID);
+			// console.log("current: "+slide);
+			console.log("Active: "+slideID);
+			// reset previously acive
+			slides.forEach(slide=>{
+				slide.classList.remove('prev')
+				slide.classList.remove('active')
+			})
+			slide.classList.add('active');
+			console.log("prev: "+prev.getAttribute('id'));
+			prev.classList.add('prev');
+		});
+		});
+	}
+	function resetLinks(){
+		const links = document.querySelectorAll('.indicator')
+		links.forEach((link) => {
+			link.classList.remove('active');
+		});
+		links[0].classList.add('active');
+	}
+	function removeSlides(){
+			const logo = document.getElementById("logo");
+			var useElements = document.querySelectorAll('use.slide');
+			useElements.forEach(useElement => {
+				logo.removeChild(useElement);
+			executed = false;
+		});
+	} 
 	// slice off the remaining '#' in HTML5:    
 	if (typeof window.history.replaceState == 'function') {
 		history.replaceState({}, '', window.location.href.slice(0, -1));
@@ -348,8 +409,11 @@ $(document).ready(function () {
 				// From 2 to 1
 				if (index == '1') {
 					// body.addClass("disabled-onepage-scroll");
+					
 					$('.med').addClass('active');
 					//$('.bgshape').removeClass('active');
+					
+					removeSlides();
 					var first = new TimelineMax();
 					first.to(".itemContainer", 0, {
 							opacity: 0,
@@ -386,9 +450,12 @@ $(document).ready(function () {
 				// From 1 to 2 // From 3 to 2 opacity: 1; top: 265%; left: 90%; width: 79%; transform: matrix(0.9848, 0.17364, -0.17364, 0.9848, -157.5, -207);
 				// From 2 to 3
 				if (index == '2') {
-
+					
 					// body.addClass("disabled-onepage-scroll");
+					
+					resetLinks();
 					var second = new TimelineMax();
+					
 					second.to(".bgshape", 1.09, {
 							className: '+=' + 'secondred',
 							ease: Sine.easeInOut
@@ -415,6 +482,7 @@ $(document).ready(function () {
 						ease: Sine.easeInOut
 					})
 
+					
 
 					var seconds = new TimelineMax();
 					seconds.to(".ui-layer-dot", .7, {
@@ -425,12 +493,29 @@ $(document).ready(function () {
 							opacity: 0,
 							ease: Sine.easeInOut
 						}, ".07")
+						
+					function executeOnce(fn) {
+						return function() {
+							if (!executed) {
+							fn.apply(this, arguments);
+							executed = true;
+							}
+						};
+					}
+					const executeOnceWrapper = executeOnce(showImages);
+					setTimeout(executeOnceWrapper, 1000);
 
 				}
 
 				// From 2 to 3 // From 4 to 3 opacity: 1; top: 300%; left: -197%; width: 400%; transform: matrix(0.9848, 0.17364, -0.17364, 0.9848, -157.5, -207);
 				if (index == '3') {
+					removeSlides();
 					var third = new TimelineMax();
+					if($('.bgshape').hasClass('fillImage')){
+						$('.bgshape').removeClass('fillImage');
+					}
+					const svg = document.getElementById('logo');
+					svg.removeAttribute('fill');
 					third.to(".bgshape", .5, {
 							className: '+=' + 'thirdred',
 							ease: Sine.easeInOut
@@ -1136,7 +1221,7 @@ $(document).ready(function () {
 			function getRotationDegree(element){
 				const computedStyles = window.getComputedStyle(element);
 				var tr = computedStyles.getPropertyValue("transform")
-				console.log(tr);
+				// console.log(tr);
 				var values = tr.split('(')[1],
 				values = values.split(')')[0],
 				values = values.split(',');
@@ -1146,7 +1231,7 @@ $(document).ready(function () {
 				var c = values[2]; 
 				var d = values[3]; 
 				var angle = Math.round(Math.asin(b) * (180/Math.PI));
-				console.log("angle: "+ angle);
+				// console.log("angle: "+ angle);
 				return angle;
 			}
 			function getPositionsAfterRotation(element) {
@@ -1159,8 +1244,8 @@ $(document).ready(function () {
 				const translateValues = transformValue.match(/-?\d+(\.\d+)?/g);
 				const translateX = 0.5*originalWidth;
 				const translateY = 0.5*originalHeight;
-				console.log("translateX : "+translateX);
-				console.log("translateY : "+translateY);
+				// console.log("translateX : "+translateX);
+				// console.log("translateY : "+translateY);
 				// Calculate the rotated width and height
 				const radians = Math.abs(parseFloat(getRotationDegree(element) * (Math.PI / 180)));
 				const rotatedWidth = Math.abs(originalWidth * Math.cos(radians)) + Math.abs(originalHeight * Math.sin(radians));
@@ -1182,10 +1267,10 @@ $(document).ready(function () {
 			rightRange = positionsAfterRotation.right;
 			upRange = positionsAfterRotation.top;
 			bottomRange = positionsAfterRotation.bottom;
-			console.log("Left: "+leftRange);
-			console.log("Right: "+rightRange);
-			console.log("Top: "+upRange);
-			console.log("Bottom: "+bottomRange);
+			// console.log("Left: "+leftRange);
+			// console.log("Right: "+rightRange);
+			// console.log("Top: "+upRange);
+			// console.log("Bottom: "+bottomRange);
 			do{
 				x = this.random(this.width);
 			}while(x >= leftRange && x<=rightRange);

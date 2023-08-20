@@ -606,6 +606,12 @@ svg {visibility:hidden;}
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media (max-width:450px){
+  .headco{
+    top: 60%;
+    left: 60%;
+  }
+}
 .bgshape{
   /*width: 335px;  24 */
   position: absolute;
@@ -616,6 +622,12 @@ svg {visibility:hidden;}
   left: 10.5%;
   top: 46%;
   width: 22%;
+}
+@media(max-width:450px){
+  .bgshape{
+    left: 18.5%;
+    top: 50%;
+  }
 }
 .bgshape svg{fill: white;}
 .message,.hello,#slogans{
@@ -658,13 +670,14 @@ p.slogan strong{
   width: 80%;
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 60%;
   transform: translate(-50%, -50%);
 }
 @media(max-width:450px){
   .sectionco{
-    top:25%;
-    left:37%;
+    height:23% !important;
+    top:78%;
+    left:60%;
   }
 }
 @media(min-width:2000px){
@@ -1535,6 +1548,11 @@ img[alt="cloud"]{position: absolute;left: 0;z-index: 999;bottom: -110px;opacity:
 }
 .blowup svg{fill: #D11E46}
 .explodes{width: 100%;height: 100%;top: 0}
+.bgshape{
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
 .secondred{width: 33%;top: 10%;left: 56%;transform: rotate(10deg);}
 .thirdred{width: 230%;top: -70%;left: -80%;}
 .sixblue{top: 200%}
@@ -3530,9 +3548,9 @@ a.active:after {
 }
 @media all and (max-width: 425px){
   .secondred{   
-    top: 40%;
-    left: -110%;
-    width: 280%;}
+    top: 6%;
+    left: 6%;
+    width: 90%;}
   .mouse {width: 3%;height: 2.46%;}
   .about-us{    top: 75%;}
   .about-us a{display: block;width: 100%;font-size: 3vw;margin: 7% 0;}

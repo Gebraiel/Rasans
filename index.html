@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/page8.css"/>
     <link rel="stylesheet" href="./css/folio.css"/>
     <link rel="stylesheet" href="./css/image-linkNew.css"/>
+    <script src="https://kit.fontawesome.com/1a11e246e6.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/zxm-modernizr.js"></script>
     <script>
         (function (w, d, u) {
@@ -209,7 +210,7 @@
         <section class="page-el" id="page2ID">
             <div class="container">
                 <div class="sectionco" id="slidingImgContainer">
-                    <div loading="lazy" class="imgContainer">
+                        <!-- <div loading="lazy" class="imgContainer">
                             <img src="images-testing/production.jpg"/>
                         </div>
                         <div loading="lazy" class="imgContainer">
@@ -232,7 +233,15 @@
                         </div> 
                         <div loading="lazy" class="imgContainer">
                             <img src="images-testing/media.jpg"/>
-                        </div> 
+                        </div>  -->
+                        <h1 class="indicator active"><a class="image-link" data-fill="slide1">Media <a href="#" class="fa-solid fa-arrow-right arrow"></a> </a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide2">Production <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide3">Tradeshow <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide4">Marketing <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide5">Branding <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide6">Content <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide7">Digital <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
+                        <h1 class="indicator"><a class="image-link" data-fill="slide8">Design <a href="#" class="fa-solid fa-arrow-right arrow"></a></a></h1>
                 </div>
             </div>
         </section>
@@ -489,7 +498,7 @@
     <div class="explodes">
         <div class="explodecontainer">
             <div class="bgshape tablet"> 
-                <div class="itemContainer" id="slidingItemContainer">
+                <!-- <div class="itemContainer" id="slidingItemContainer">
                     <a href="#" >Media</a> 
                     <a href="#" >Production</a>
                     <a href="#" >Tradeshow</a>
@@ -498,15 +507,52 @@
                     <a href="#" >Content</a>
                     <a href="#" >Digital</a>
                     <a href="#" >Design</a>   
-                </div>
-                <svg viewbox="0 0 322 419.6">
-                    <path class="st0"
-                        d="M289.9,234.5c31.4-37.8,41.3-91.4,22.8-140.8c-27.9-74.6-111-112.4-185.5-84.5c-48.8,18.3-79.9,60.7-90.9,108 					C36.1,117.6,5.7,268,0.7,318.4c-1.1,10.9-0.6,28.5,5,43.4c17.4,46.6,69.5,69.4,116.1,52c16.1-6,29.4-16.6,39.3-29.2 					c0,0,0.1-0.2,0.1-0.2S258.3,272.5,289.9,234.5z" />
-                </svg> 
+                </div> -->
+                <svg id="logo" viewbox="0 0 322 419.6">
+                    <path id="shape" class="st0" d="m289.9 234.5c31.4-37.8 41.3-91.4 22.8-140.8-27.9-74.6-111-112.4-185.5-84.5-48.8 18.3-79.9 60.7-90.9 108-.2.4-30.6 150.8-35.6 201.2-1.1 10.9-.6 28.5 5 43.4 17.4 46.6 69.5 69.4 116.1 52 16.1-6 29.4-16.6 39.3-29.2 0 0 .1-.2.1-.2s97.1-111.9 128.7-149.9z" />
+
+                    <defs>
+                        <pattern id="imageFill1" x="0" y="0" width="1" height="1">
+                            <image id="patternImage1" href="images-testing/media.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill2" x="0" y="0" width="1" height="1">
+                            <image id="patternImage2" href="images-testing/production.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill3" x="0" y="0" width="1" height="1">
+                            <image id="patternImage3" href="images-testing/tradeshow.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill4" x="0" y="0" width="1" height="1">
+                            <image id="patternImage4" href="images-testing/marketing.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill5" x="0" y="0" width="1" height="1">
+                            <image id="patternImage5" href="images-testing/branding.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill6" x="0" y="0" width="1" height="1">
+                            <image id="patternImage6" href="images-testing/content.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill7" x="0" y="0" width="1" height="1">
+                            <image id="patternImage7" href="images-testing/digital.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                        <pattern id="imageFill8" x="0" y="0" width="1" height="1">
+                            <image id="patternImage8" href="images-testing/design.jpg" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" />
+                        </pattern>
+                    </defs>
+                </svg>
             </div>
         </div>
     </div>
 <script data-cfasync="false" src="./js/5c5dd728-cloudflare-static-email-decode.min.js"></script>
+    <script>
+        const links = document.querySelectorAll('.image-link');
+        links.forEach((link) => {
+		link.addEventListener("click", (e)=> {
+            var active = document.querySelector('h1.active');
+            active.classList.remove('active');
+            var current = link.parentElement;
+            current.classList.add('active');
+		});
+		});
+    </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script type="text/javascript" src="https://www.micelistudios.com/js/plugins/DrawSVGPlugin.min.js"></script>
@@ -521,6 +567,7 @@
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzw0OG2azixJoVbNpLveVHQ4TBWVsW1kw&callback=initMap">
     </script>
+    
     <script type="text/javascript">
         var myCenter = new google.maps.LatLng(30.0528397, 31.1968915);
 
@@ -683,8 +730,31 @@
         'server': 'a2plcpnl0795'
     }) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
 </script>
-<!--<script src="js/page2.js"></script>-->
-<script src="js/page2.js"></script>
+<!-- page 2 -->
+<!-- <script>
+    // List of background images
+    var backgroundImages = [
+        'branding.jpg',
+        'content.jpg',
+        'design.jpg'
+    ];
+
+    // Get all link elements by their class
+    var imageLinks = document.querySelectorAll('.image-link');
+    // console.log(imageLinks.length);
+    console.log(imageLinks.length);
+    // Add click event listeners to each link
+    imageLinks.forEach(function(link, index) {
+        link.addEventListener('click', function() {
+            var imageUrl = 'images-testing/' + backgroundImages[index];
+            
+            bgshape = document.getElementsByClassName("bgshape")[0];
+            bgshape.style.backgroundImage = 'url(' + imageUrl + ')';
+        });
+    });
+</script> -->
+<!-- <script src="js/page2.js"></script> -->
+<!-- <script src="js/page2.js"></script> -->
 <script src="./js/unluckyNew.js"></script>
 <script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
 </html>
